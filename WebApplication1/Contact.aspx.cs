@@ -147,5 +147,28 @@ namespace WebApplication1
             GridViews.EditIndex = -1;
             this.BindGrid();
         }
+
+        protected void btnDeleteRecords_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.AddRange(new DataColumn[] { new DataColumn("Id", typeof(int)),
+               new DataColumn("User_name", typeof(string)), new DataColumn("Department", typeof(string)),
+                new DataColumn("MngerId", typeof(int)) });
+            foreach(GridViewRow row in GridViews.Rows)
+            {
+                if((row.FindControl("ChkDel") as CheckBox).Checked)
+                {
+                    int Id = Convert.ToInt32(GridViews.DataKeys[row.RowIndex].Value);
+                    using (SqlConnection con = new SqlConnection(dbConnectionString))
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("DELETE FROM Employees WHERE Id=" + Id, con);
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                    }
+                }
+            }
+            this.BindGrid();
+        }
     }
 }

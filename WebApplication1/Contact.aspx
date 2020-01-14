@@ -31,10 +31,16 @@
         }
     </style>
     <h3>Employees Table View!</h3>
+    <asp:Button ID="btnDeleteRecords" runat="server" Text="Delete Selected Records" OnClick="btnDeleteRecords_Click" style="color:darkmagenta;Background:gold"/>
     <asp:GridView ID="GridViews" runat="server" Autogeneratecolumns="false" DataKeyNames="Id"
       OnRowEditing="OnRowEditing" OnRowCancelingEdit="OnRowCancelingEdit"
        OnRowUpdating="OnRowUpdating" OnRowDeleting="OnRowDeleting" EmptyDataText="No records has been added.">
         <Columns>
+            <asp:TemplateField HeaderText="select" ItemStyle-Width="150">
+                <ItemTemplate>
+                    <asp:CheckBox ID="ChkDel" runat="server" />
+                </ItemTemplate>
+            </asp:TemplateField>
             <asp:TemplateField HeaderText="Id" ItemStyle-Width="150">
                 <ItemTemplate>
                     <asp:Label ID="lblId" runat="server" Text='<%# Eval("Id") %>'></asp:Label>
