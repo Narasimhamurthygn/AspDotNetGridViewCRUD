@@ -125,6 +125,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="GridViewCRUD.aspx" />
     <Content Include="LinkButtonRedirectPage.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -186,6 +187,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GridViewCRUD.aspx.cs">
+      <DependentUpon>GridViewCRUD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GridViewCRUD.aspx.designer.cs">
+      <DependentUpon>GridViewCRUD.aspx</DependentUpon>
     </Compile>
     <Compile Include="LinkButtonRedirectPage.aspx.cs">
       <DependentUpon>LinkButtonRedirectPage.aspx</DependentUpon>
