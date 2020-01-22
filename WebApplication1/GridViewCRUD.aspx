@@ -56,7 +56,7 @@
            background-color: #ff8000;
            font-family: Arial;
            color: #fff;
-           text-align: left;
+           text-align: center;
         }
         .selectedrow
         {
