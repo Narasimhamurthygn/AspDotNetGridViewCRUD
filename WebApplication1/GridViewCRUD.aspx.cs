@@ -59,7 +59,7 @@ namespace WebApplication1
             SqlCommand cmd = new SqlCommand("TblEmployees");
             cmd.Connection = con;
             con.Open();
-            SqlDataAdapter dt = new SqlDataAdapter("spEmployeeViewAll", con);
+            SqlDataAdapter dt = new SqlDataAdapter("spEmployeeViewAlls", con);
             dt.SelectCommand.CommandType = CommandType.StoredProcedure;
             DataTable dataTable = new DataTable();
             dt.Fill(dataTable);
